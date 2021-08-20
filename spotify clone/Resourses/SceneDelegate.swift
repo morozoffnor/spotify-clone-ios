@@ -17,8 +17,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = TabBarViewController()
+        // if user is signed in - use TabBarController
+        if AuthManager.shared.isSignedIn {
+            window.rootViewController = TabBarViewController()
+        }
+        // else - use WelcomeViewController
+        else {
+            window.rootViewController = UINavigationController(rootViewController: WelcomeViewController())
         window.makeKeyAndVisible()
+        }
         self.window = window
     }
 
