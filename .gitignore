@@ -1,0 +1,6 @@
+Pods
+*.xcsettings
+config.json
+config.swift
+**/spotify clone/Resources/config.swift
+"spotify clone/Resources/config.json"

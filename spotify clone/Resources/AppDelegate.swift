@@ -22,10 +22,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         // else - use WelcomeViewController
         else {
-            window.rootViewController = UINavigationController(rootViewController: WelcomeViewController())
+            // creating navigation controller variable to be able to set its properties
+            let navVC = UINavigationController(rootViewController: WelcomeViewController())
+            navVC.navigationBar.prefersLargeTitles = true
+            navVC.viewControllers.first?.navigationItem.largeTitleDisplayMode = .always
+            window.rootViewController = navVC
         }
         window.makeKeyAndVisible()
         self.window = window
+        
+        // test perpose only. will remove later
+        print(AuthManager.shared.signInUrl?.absoluteString)
+        
         return true
     }
 

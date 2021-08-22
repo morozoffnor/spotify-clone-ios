@@ -23,8 +23,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
         // else - use WelcomeViewController
         else {
-            window.rootViewController = UINavigationController(rootViewController: WelcomeViewController())
-        window.makeKeyAndVisible()
+            // creating navigation controller variable to be able to set its properties
+            let navVC = UINavigationController(rootViewController: WelcomeViewController())
+            navVC.navigationBar.prefersLargeTitles = true
+            navVC.viewControllers.first?.navigationItem.largeTitleDisplayMode = .always
+            window.rootViewController = navVC
+            
+            window.makeKeyAndVisible()
         }
         self.window = window
     }
