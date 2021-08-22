@@ -30,10 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         window.makeKeyAndVisible()
         self.window = window
-        
-        // test perpose only. will remove later
-        print(AuthManager.shared.signInUrl?.absoluteString)
-        
+                
         return true
     }
 
