@@ -13,6 +13,8 @@ import SwiftyJSON
 final class AuthManager {
     static let shared = AuthManager()
     
+    private var refreshingToken = false
+    
     struct Constants {
         static let clientID = ConfigClientID
         static let clientSecret = ConfigClientSecret
@@ -63,7 +65,7 @@ final class AuthManager {
         completion: @escaping ((Bool) -> Void)
     ) {
         
-        // MARK: make api request
+        // MARK: Get token
         
         guard let url = URL(string: Constants.tokenApiUrl) else {
             return
@@ -114,7 +116,40 @@ final class AuthManager {
         task.resume()
     }
     
+    // form a "queue" of requests
+    private var onRefreshBlocks = [((String) -> Void)]()
+    
+    // MARK: Check token
+    
+    // used every api call to get valid token
+    public func withValidToken(completion: @escaping (String) -> Void) {
+        guard !refreshingToken else {
+            // append the completeion block
+            onRefreshBlocks.append(completion)
+            return
+        }
+        if shouldReffreshToken {
+            // refresh if it's going to expire soon
+            refreshIfNeeded { [weak self] success in
+                if let token = self?.accessToken, success {
+                    completion(token)
+                }
+            }
+        }
+        else if let token = accessToken {
+            // return token if it's valid
+            completion(token)
+        }
+    }
+    
+    // MARK: Refresh token
+    
     public func refreshIfNeeded(completion: @escaping (Bool) -> Void) {
+        // dont refresh if it is already refreshing
+        guard !refreshingToken else {
+            return
+        }
+        
         guard shouldReffreshToken else {
             completion(true)
             return
@@ -127,6 +162,9 @@ final class AuthManager {
         guard let url = URL(string: Constants.tokenApiUrl) else {
             return
         }
+        
+        // change the state
+        refreshingToken = true
         
         // construct query
         var components = URLComponents()
@@ -152,6 +190,8 @@ final class AuthManager {
         request.setValue("Basic \(base64String)", forHTTPHeaderField: "Authorization")
         
         let task = URLSession.shared.dataTask(with: request) { [weak self] data, _, error in
+            // change state whether succeded or not
+            self?.refreshingToken = false
             // if data doesn't exist or there is an error - completion = false
             guard let data = data, error == nil else {
                 completion(false)
@@ -159,10 +199,17 @@ final class AuthManager {
             }
             // otherwise go and try
             do {
-                // decode json into the model and then         cache it
-                let json = try JSONDecoder().decode(AuthResponse.self, from: data)
-                self?.cacheToken(result: json)
-                print("Successfully refreshed the token")
+                // decode json into the model
+                let result = try JSONDecoder().decode(AuthResponse.self, from: data)
+                
+                // execute everything from queue
+                self?.onRefreshBlocks.forEach { $0(result.access_token) }
+                
+                // remove everything from queue
+                self?.onRefreshBlocks.removeAll()
+                
+                // cache the token
+                self?.cacheToken(result: result)
                 completion(true)
             }
             catch {
