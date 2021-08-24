@@ -7,5 +7,9 @@ target 'spotify clone' do
 
   # Pods for spotify clone
 pod 'SwiftyJSON', '~> 4.0'
+pod 'SDWebImage'
+pod 'Appirater'
+pod 'Firebase/Analytics'
+
 
 end
