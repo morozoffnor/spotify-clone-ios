@@ -18,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // if user is signed in - use TabBarController
         if AuthManager.shared.isSignedIn {
+            // if user is signed in go check if token refresh is needed rightaway
+            AuthManager.shared.refreshIfNeeded(completion: nil)
             window.rootViewController = TabBarViewController()
         }
         // else - use WelcomeViewController

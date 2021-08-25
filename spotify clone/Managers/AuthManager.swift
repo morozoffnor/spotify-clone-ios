@@ -144,14 +144,14 @@ final class AuthManager {
     
     // MARK: Refresh token
     
-    public func refreshIfNeeded(completion: @escaping (Bool) -> Void) {
+    public func refreshIfNeeded(completion: ((Bool) -> Void)?) {
         // dont refresh if it is already refreshing
         guard !refreshingToken else {
             return
         }
         
         guard shouldReffreshToken else {
-            completion(true)
+            completion?(true)
             return
         }
         guard let refreshToken = self.refreshToken else {
@@ -184,7 +184,7 @@ final class AuthManager {
         let data = basicToken.data(using: .utf8)
         guard let base64String = data?.base64EncodedString() else {
             print("Failed to get base64")
-            completion(false)
+            completion?(false)
             return
         }
         request.setValue("Basic \(base64String)", forHTTPHeaderField: "Authorization")
@@ -194,7 +194,7 @@ final class AuthManager {
             self?.refreshingToken = false
             // if data doesn't exist or there is an error - completion = false
             guard let data = data, error == nil else {
-                completion(false)
+                completion?(false)
                 return
             }
             // otherwise go and try
@@ -210,11 +210,11 @@ final class AuthManager {
                 
                 // cache the token
                 self?.cacheToken(result: result)
-                completion(true)
+                completion?(true)
             }
             catch {
                 print(error.localizedDescription)
-                completion(false)
+                completion?(false)
             }
         }
         task.resume()
