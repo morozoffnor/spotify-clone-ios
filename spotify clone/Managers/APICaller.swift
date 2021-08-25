@@ -19,6 +19,9 @@ final class APICaller {
     enum apiError: Error {
         case failedToGetData
     }
+    
+    // MARK: User Profile
+    
     public func getCurrentUserProfile(completion: @escaping (Result<UserProfile, Error>) -> Void) {
         createRequest(with: URL(string: Constants.baseApiUrl + "/me"), type: .GET) { baseRequest in
             // get data
@@ -42,6 +45,30 @@ final class APICaller {
             task.resume()
         }
     }
+    
+    // MARK: Get New Releases
+    
+    public func getNewReleases(completion: @escaping ((Result<NewReleasesResponse, Error>)) -> Void) {
+        createRequest(with: URL(string: Constants.baseApiUrl + "/browse/new-releases?limit=50"), type: .GET) { request in
+            let task = URLSession.shared.dataTask(with: request) { data, _, error in
+                guard let data = data, error == nil else {
+                    completion(.failure(apiError.failedToGetData))
+                    return
+                }
+                
+                do {
+                    let result = try JSONDecoder().decode(NewReleasesResponse.self, from: data)
+                    completion(.success(result))
+                }
+                catch {
+                    completion(.failure(error))
+                }
+            }
+            task.resume()
+        }
+    }
+    
+    // MARK: Generic Request
     
     // enum for http methods
     enum Method: String {
