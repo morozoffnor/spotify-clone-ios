@@ -3,7 +3,7 @@ name: Example iOS Build
 on:
   push:
     branches:
-      - development
+      - master
 
 jobs:
   build-ios:
