@@ -40,6 +40,7 @@
 		1CE3D45126DC82ED00B6F21E /* NewReleaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE3D45026DC82ED00B6F21E /* NewReleaseCollectionViewCell.swift */; };
 		1CE3D45326DC832700B6F21E /* FeaturedPlaylistsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE3D45226DC832700B6F21E /* FeaturedPlaylistsCollectionViewCell.swift */; };
 		1CE3D45526DC836A00B6F21E /* RecommendedTracksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE3D45426DC836A00B6F21E /* RecommendedTracksCollectionViewCell.swift */; };
+		1CE3D45726DCB05B00B6F21E /* NewReleasesCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE3D45626DCB05B00B6F21E /* NewReleasesCellViewModel.swift */; };
 		1CE7FE9C26D1A119004CE6AF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE7FE9B26D1A119004CE6AF /* Extensions.swift */; };
 		D272C86BB05BDD8B4589B09E /* Pods_spotify_clone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD8E9512C1AF1DA2DF718A02 /* Pods_spotify_clone.framework */; };
 /* End PBXBuildFile section */
@@ -80,6 +81,7 @@
 		1CE3D45026DC82ED00B6F21E /* NewReleaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReleaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		1CE3D45226DC832700B6F21E /* FeaturedPlaylistsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedPlaylistsCollectionViewCell.swift; sourceTree = "<group>"; };
 		1CE3D45426DC836A00B6F21E /* RecommendedTracksCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedTracksCollectionViewCell.swift; sourceTree = "<group>"; };
+		1CE3D45626DCB05B00B6F21E /* NewReleasesCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReleasesCellViewModel.swift; sourceTree = "<group>"; };
 		1CE7FE9B26D1A119004CE6AF /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		1CE7FE9D26D1A4F9004CE6AF /* config.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = config.json; sourceTree = "<group>"; };
 		3CE223FABFCA25E07B96EF58 /* Pods-spotify clone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spotify clone.release.xcconfig"; path = "Target Support Files/Pods-spotify clone/Pods-spotify clone.release.xcconfig"; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 		1CDB85AE26CD99D800D399AC /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				1CE3D45626DCB05B00B6F21E /* NewReleasesCellViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CE3D45726DCB05B00B6F21E /* NewReleasesCellViewModel.swift in Sources */,
 				1CDB85B626CD9DF900D399AC /* SearchViewController.swift in Sources */,
 				1CE3D45126DC82ED00B6F21E /* NewReleaseCollectionViewCell.swift in Sources */,
 				1CE3D44E26DBFB8100B6F21E /* RecommendationResponse.swift in Sources */,

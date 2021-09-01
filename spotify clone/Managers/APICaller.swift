@@ -61,6 +61,7 @@ final class APICaller {
                     completion(.success(result))
                 }
                 catch {
+                    print(error.localizedDescription)
                     completion(.failure(error))
                 }
             }
@@ -86,7 +87,7 @@ final class APICaller {
                 }
                 catch {
                     completion(.failure(error))
-                    print(error)
+                    print(error.localizedDescription)
                 }
             }
             task.resume()
@@ -107,12 +108,12 @@ final class APICaller {
                 do {
                     let result = try JSONDecoder().decode(RecommendationsResponse.self, from: data)
                     // let result = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
-                    print(result)
+//                    print(result)
                     completion(.success(result))
                 }
                 catch {
                     completion(.failure(error))
-                    print(error)
+                    print(error.localizedDescription)
                 }
             }
             task.resume()
@@ -137,7 +138,7 @@ final class APICaller {
                 }
                 catch {
                     completion(.failure(error))
-                    print(error)
+                    print(error.localizedDescription)
                 }
             }
             task.resume()
