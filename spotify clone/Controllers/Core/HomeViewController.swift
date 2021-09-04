@@ -269,7 +269,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             // section
             let section = NSCollectionLayoutSection(group: horizontalGroup)
             // snap to the next element when scrolling through
-            section.orthogonalScrollingBehavior = .continuous
+            section.orthogonalScrollingBehavior = .groupPaging
             return section
         // MARK: Recommended Tracks
         case 2:

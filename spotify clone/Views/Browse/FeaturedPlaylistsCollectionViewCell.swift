@@ -39,6 +39,7 @@ class FeaturedPlaylistsCollectionViewCell: UICollectionViewCell {
     // add subviews
     override init(frame: CGRect) {
         super.init(frame: frame)
+        contentView.backgroundColor = .secondarySystemBackground
 
         contentView.addSubview(playlistCoverImageView)
         contentView.addSubview(playlistNameLabel)
