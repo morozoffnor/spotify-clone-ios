@@ -1,0 +1,10 @@
+workflow:
+  spotify-workflow:
+    name: Spotify pipeline
+    scripts:
+      - name: CI/CD started
+        script: echo "CI/CD started..."
+    publishing:
+      email:
+        recipients:
+          - morozofff@icloud.com
