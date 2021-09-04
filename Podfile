@@ -4,6 +4,7 @@
 target 'spotify clone' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
+  inhibit_all_warnings!
 
   # Pods for spotify clone
 pod 'SwiftyJSON', '~> 4.0'
