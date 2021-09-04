@@ -1,4 +1,4 @@
-workflow:
+workflows:
   spotify-workflow:
     name: Spotify pipeline
     scripts:
