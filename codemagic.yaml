@@ -4,6 +4,8 @@ workflows:
     scripts:
       - name: CI/CD started
         script: echo "CI/CD started..."
+      - name: Building a project...
+        script: - xcodebuild build -workspace "spotify clone.xcworkspace" -scheme "spotify clone" CODE_SIGN_INDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
     publishing:
       email:
         recipients:
