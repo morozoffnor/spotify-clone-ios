@@ -96,3 +96,8 @@ fastlane/test_output
 
 iOSInjectionProject/
 .swiftlint.yml
+**/spotify clone/GoogleService-Info-5.plist
+*.plist
+
+GoogleService-Info-5.plist
+**/spotify clone/Resources/GoogleService-Info-5.plist

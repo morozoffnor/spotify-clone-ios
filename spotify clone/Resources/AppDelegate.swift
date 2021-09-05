@@ -7,6 +7,7 @@
 
 import UIKit
 import Atlantis
+import Firebase
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -35,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = window
         
         Atlantis.start(hostName: "igors-macbook-air.local.")
-                
+        FirebaseApp.configure()
         return true
     }
 

@@ -15,8 +15,7 @@ class FeaturedPlaylistsCollectionViewCell: UICollectionViewCell {
         
         // set the default image in case app cant get one
         imageView.image = UIImage(systemName: "photo")
-        imageView.layer.masksToBounds = true
-        imageView.layer.cornerRadius = 8
+
         
         imageView.contentMode = .scaleAspectFill
         
@@ -26,6 +25,7 @@ class FeaturedPlaylistsCollectionViewCell: UICollectionViewCell {
     private let playlistNameLabel: UILabel = {
        let label = UILabel()
         label.font = .systemFont(ofSize: 18, weight: .regular)
+        label.textAlignment = .center
         label.numberOfLines = 0
         return label
     }()
@@ -33,6 +33,7 @@ class FeaturedPlaylistsCollectionViewCell: UICollectionViewCell {
     private let creatorNameLabel: UILabel = {
        let label = UILabel()
         label.font = .systemFont(ofSize: 15, weight: .thin)
+        label.textAlignment = .center
         label.numberOfLines = 0
         return label
     }()

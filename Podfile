@@ -11,6 +11,7 @@ pod 'SwiftyJSON', '~> 4.0'
 pod 'SDWebImage'
 pod 'Appirater'
 pod 'Firebase/Analytics'
+pod 'Firebase/RemoteConfig'
 pod 'SwiftLint'
 pod 'atlantis-proxyman'
 

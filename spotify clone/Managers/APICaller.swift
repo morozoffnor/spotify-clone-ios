@@ -46,6 +46,64 @@ final class APICaller {
         }
     }
     
+    // MARK: - Albums
+    
+    public func getAlbumDetails(
+        for album: Album,
+        completion: @escaping (Result<AlbumDetailsResponse, Error>) -> Void ) {
+        createRequest(
+            with: URL(string: Constants.baseApiUrl + "/albums/\(album.id)"),
+            type: .GET
+        ) { request in
+            let task = URLSession.shared.dataTask(with: request) { data, _, error in
+                guard let data = data, error == nil else {
+                    completion(.failure(apiError.failedToGetData))
+                    return
+                }
+                do {
+                    let result = try JSONDecoder().decode(AlbumDetailsResponse.self, from: data)
+                    completion(.success(result))
+                }
+                catch {
+                    print(error)
+                    completion(.failure(error))
+                }
+            }
+            task.resume()
+        }
+    }
+        
+    // MARK: - Playlists
+    
+    public func getPlaylistDetails(
+        for playlist: Playlist,
+        completion: @escaping (Result<PlaylistDetailsResponse, Error>) -> Void ) {
+        createRequest(
+            with: URL(string: Constants.baseApiUrl + "/playlists/\(playlist.id)"),
+            type: .GET
+        ) { request in
+            let task = URLSession.shared.dataTask(with: request) { data, _, error in
+                guard let data = data, error == nil else {
+                    completion(.failure(apiError.failedToGetData))
+                    return
+                }
+                do {
+                    let result = try JSONDecoder().decode(PlaylistDetailsResponse.self, from: data)
+                    completion(.success(result))
+                }
+                catch {
+                    print(error)
+                    completion(.failure(error))
+                }
+            }
+            task.resume()
+        }
+    }
+    
+    // MARK: - Browse
+    
+    
+    
     // MARK: Get New Releases
     
     public func getNewReleases(completion: @escaping ((Result<NewReleasesResponse, Error>)) -> Void) {
