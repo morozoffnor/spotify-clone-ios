@@ -104,7 +104,10 @@ final class AuthManager {
             // otherwise go and try
             do {
                 // decode json into the model and then 		cache it
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
                 let json = try JSONDecoder().decode(AuthResponse.self, from: data)
+                
                 self?.cacheToken(result: json)
                 completion(true)
             }

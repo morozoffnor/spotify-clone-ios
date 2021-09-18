@@ -13,7 +13,7 @@ struct PlaylistDetailsResponse: Codable {
     let id: String
     let images: [APIImage]
     let name: String
-    let primary_color: String
+    let primary_color: String?
     let `public`: Bool
     let tracks: PlaylistTracksResponse
 }
