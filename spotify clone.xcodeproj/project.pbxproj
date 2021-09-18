@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C023E6526F6A175009A9CFF /* TitleHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C023E6426F6A175009A9CFF /* TitleHeaderCollectionReusableView.swift */; };
 		1C046E6A26D1B2B400EBE6FF /* config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C046E6926D1B2B400EBE6FF /* config.swift */; };
 		1C046E6C26D2756E00EBE6FF /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C046E6B26D2756E00EBE6FF /* AuthResponse.swift */; };
 		1C36110E26D487E60091A62F /* SettingsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C36110D26D487E60091A62F /* SettingsModels.swift */; };
@@ -15,6 +16,8 @@
 		1C73B58C26D6A0E600E90C95 /* NewReleasesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C73B58B26D6A0E600E90C95 /* NewReleasesResponse.swift */; };
 		1C93B1DC26E15F2D0033DBEC /* FeaturedPlaylistCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C93B1DB26E15F2D0033DBEC /* FeaturedPlaylistCellViewModel.swift */; };
 		1C93B1E026E15FF20033DBEC /* RecommendedTrackCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C93B1DF26E15FF20033DBEC /* RecommendedTrackCellViewModel.swift */; };
+		1CB5588D26EFCD9F00ADC72C /* PlaylistHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB5588C26EFCD9F00ADC72C /* PlaylistHeaderCollectionReusableView.swift */; };
+		1CB5588F26EFD3AA00ADC72C /* PlaylistHeaderViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB5588E26EFD3AA00ADC72C /* PlaylistHeaderViewViewModel.swift */; };
 		1CB8989026E3EE83007751FF /* AlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB8988F26E3EE83007751FF /* AlbumViewController.swift */; };
 		1CB8989426E50A1F007751FF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1CB8989326E50A1F007751FF /* GoogleService-Info.plist */; };
 		1CB8989626E50A87007751FF /* Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB8989526E50A87007751FF /* Firebase.swift */; };
@@ -53,6 +56,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C023E6426F6A175009A9CFF /* TitleHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		1C046E6926D1B2B400EBE6FF /* config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = config.swift; sourceTree = "<group>"; };
 		1C046E6B26D2756E00EBE6FF /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
 		1C36110D26D487E60091A62F /* SettingsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModels.swift; sourceTree = "<group>"; };
@@ -60,6 +64,8 @@
 		1C73B58B26D6A0E600E90C95 /* NewReleasesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReleasesResponse.swift; sourceTree = "<group>"; };
 		1C93B1DB26E15F2D0033DBEC /* FeaturedPlaylistCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedPlaylistCellViewModel.swift; sourceTree = "<group>"; };
 		1C93B1DF26E15FF20033DBEC /* RecommendedTrackCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedTrackCellViewModel.swift; sourceTree = "<group>"; };
+		1CB5588C26EFCD9F00ADC72C /* PlaylistHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		1CB5588E26EFD3AA00ADC72C /* PlaylistHeaderViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistHeaderViewViewModel.swift; sourceTree = "<group>"; };
 		1CB8988F26E3EE83007751FF /* AlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewController.swift; sourceTree = "<group>"; };
 		1CB8989326E50A1F007751FF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1CB8989526E50A87007751FF /* Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase.swift; sourceTree = "<group>"; };
@@ -161,6 +167,8 @@
 			children = (
 				1CE3D44F26DC82BC00B6F21E /* Browse */,
 				1CDB85B126CD9A8100D399AC /* LaunchScreen.storyboard */,
+				1CB5588C26EFCD9F00ADC72C /* PlaylistHeaderCollectionReusableView.swift */,
+				1C023E6426F6A175009A9CFF /* TitleHeaderCollectionReusableView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -191,6 +199,7 @@
 				1CE3D45626DCB05B00B6F21E /* NewReleasesCellViewModel.swift */,
 				1C93B1DB26E15F2D0033DBEC /* FeaturedPlaylistCellViewModel.swift */,
 				1C93B1DF26E15FF20033DBEC /* RecommendedTrackCellViewModel.swift */,
+				1CB5588E26EFD3AA00ADC72C /* PlaylistHeaderViewViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -389,6 +398,7 @@
 			files = (
 				1CE3D45726DCB05B00B6F21E /* NewReleasesCellViewModel.swift in Sources */,
 				1CDB85B626CD9DF900D399AC /* SearchViewController.swift in Sources */,
+				1CB5588D26EFCD9F00ADC72C /* PlaylistHeaderCollectionReusableView.swift in Sources */,
 				1CE3D45126DC82ED00B6F21E /* NewReleaseCollectionViewCell.swift in Sources */,
 				1CE3D44E26DBFB8100B6F21E /* RecommendationResponse.swift in Sources */,
 				1C93B1E026E15FF20033DBEC /* RecommendedTrackCellViewModel.swift in Sources */,
@@ -403,6 +413,7 @@
 				1CDB85BE26CD9E8700D399AC /* WelcomeViewController.swift in Sources */,
 				1CB8989626E50A87007751FF /* Firebase.swift in Sources */,
 				1CB8989826E527B8007751FF /* AlbumDetailsResponse.swift in Sources */,
+				1C023E6526F6A175009A9CFF /* TitleHeaderCollectionReusableView.swift in Sources */,
 				1CDB85C226CD9EBF00D399AC /* ProfileViewController.swift in Sources */,
 				1CDB85B426CD9D7C00D399AC /* TabBarViewController.swift in Sources */,
 				1CDB85CE26CD9F9D00D399AC /* HapticsManager.swift in Sources */,
@@ -410,6 +421,7 @@
 				1CDB859C26CD98E600D399AC /* HomeViewController.swift in Sources */,
 				1CDB85BC26CD9E7000D399AC /* AuthViewController.swift in Sources */,
 				1CDB859826CD98E600D399AC /* AppDelegate.swift in Sources */,
+				1CB5588F26EFD3AA00ADC72C /* PlaylistHeaderViewViewModel.swift in Sources */,
 				1CDB85D626CDA01100D399AC /* UserProfile.swift in Sources */,
 				1CE7FE9C26D1A119004CE6AF /* Extensions.swift in Sources */,
 				1CDB85B826CD9E2700D399AC /* LibraryViewController.swift in Sources */,
